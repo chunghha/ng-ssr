@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  ngssr:
+    build: .
+    environment:
+    - API_PORT
+    - APP_PORT
+    ports:
+    - '4040:4040'
+    - '4200:4200'
+    networks:
+    - ng-ssr-net
+
+networks:
+  ng-ssr-net:
+    driver: bridge
