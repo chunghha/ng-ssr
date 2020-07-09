@@ -18,10 +18,11 @@ RUN yarn
 
 # Build the APP
 COPY angular.json .
-COPY browserslist .
+COPY .browserslistrc .
 COPY server.ts .
-COPY tsconfig.app.json .
 COPY tsconfig.json .
+COPY tsconfig.app.json .
+COPY tsconfig.base.json .
 COPY tsconfig.server.json .
 COPY server server/
 COPY src src/
