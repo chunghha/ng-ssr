@@ -33,7 +33,7 @@
     "@nestjs/platform-express": "~7.3.2",
     "@nguniversal/common": "~10.0.1",
     "@nguniversal/express-engine": "~10.0.1",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "express": "~4.17.1",
     "ngx-take-until-destroy": "^5.4.0",
