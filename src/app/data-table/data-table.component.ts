@@ -3,11 +3,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { untilDestroyed } from 'ngx-take-until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 import { Element } from './element.interface';
 import { ElementService } from './element.service';
 
+@UntilDestroy()
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
