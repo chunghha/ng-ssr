@@ -1,16 +1,29 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppMaterialModule } from './app.material.module';
 import { AppComponent } from './app.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { ElementService } from './data-table/element.service';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        HttpClientModule,
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        AppMaterialModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        DataTableComponent
       ],
+      providers: [
+        ElementService
+      ]
     }).compileComponents();
   }));
 
@@ -20,16 +33,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-ssr'`, () => {
+  it(`should have as title 'NgSsr'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-ssr');
+    expect(app.title).toEqual('NgSsr');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ng-ssr app is running!');
+    expect(compiled.querySelector('.mat-toolbar span').textContent).toContain('NgSsr');
   });
 });

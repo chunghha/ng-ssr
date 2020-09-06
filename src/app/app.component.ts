@@ -7,7 +7,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'ng-ssr';
+  title = 'NgSsr';
   isSmallWidth = false;
 
   constructor(

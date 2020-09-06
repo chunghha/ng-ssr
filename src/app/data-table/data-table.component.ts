@@ -30,7 +30,7 @@ export class DataTableComponent implements AfterViewChecked, OnDestroy, OnInit {
   ngOnInit() {
     this.elementService.getElements().pipe(untilDestroyed(this))
       .subscribe(res => {
-        this.elements = <Element[]>res;
+        this.elements = res as Element[];
         this.dataSource = new MatTableDataSource<Element>(
           this.elements
         );
