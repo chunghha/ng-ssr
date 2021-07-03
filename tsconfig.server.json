@@ -2,8 +2,9 @@
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app-server",
-    "types": ["node"],
-    "emitDecoratorMetadata": true,
+    "types": [
+      "node"
+    ],
     "experimentalDecorators": true
   ,    "target": "es2016"
 },

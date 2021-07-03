@@ -22,7 +22,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -34,7 +33,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -64,7 +69,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -138,7 +144,9 @@
               "@nestjs/websockets",
               "@nestjs/websockets/socket-module",
               "cache-manager"
-            ]
+            ],
+            "sourceMap": true,
+            "optimization": false
           },
           "configurations": {
             "production": {
@@ -149,10 +157,10 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "sourceMap": false,
-              "optimization": false
+              "sourceMap": false
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
